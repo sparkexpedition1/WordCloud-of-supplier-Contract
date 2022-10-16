@@ -44,7 +44,7 @@ def preprocessing(sentences):
   # print(documents_clean)
 
 
-def st_ui():
+def get_wordcloud():
   st.set_page_config(layout = "wide")
   st.title("Word Cloud of supply contract")
   fileupload = st.sidebar.file_uploader("Upload a Contract here")
@@ -70,4 +70,4 @@ def st_ui():
  
 
 if __name__ == "__main__":
-    st_ui()
+    get_wordcloud()
