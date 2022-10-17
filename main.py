@@ -49,11 +49,9 @@ def get_wordcloud():
   st.set_page_config(layout = "wide")
   st.title("Word Cloud of supply contract")
   fileupload = st.sidebar.file_uploader("Upload a Contract here")
-  Button=st.sidebar.button('Get wordcloud')
-   
-  if fileupload is not None:
+#   Button=st.sidebar.button('Get wordcloud') 
+  if fileupload:
     text=''
-    
     pdfbytes = fileupload.getvalue()
     doc = return_doc_from_bytes(pdfbytes)
     for page in doc:
@@ -66,7 +64,6 @@ def get_wordcloud():
     plt.imshow(wordcloud,interpolation="bilinear")
     plt.axis("off")
     plt.tight_layout(pad = 0)
-
     plt.show()
  
 
